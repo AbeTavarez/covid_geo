@@ -75,3 +75,8 @@ def plotDot(point):
                                point.TotalRecovered],
                         fill_color='#000000'
                         ).add_to(map)
+
+
+covid_final.apply(plotDot, axis=1)
+m.fit_bounds(m.get_bounds())
+# m
