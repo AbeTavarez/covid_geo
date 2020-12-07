@@ -96,7 +96,7 @@ m1.add_child(HeatMap(zip(lat, lon, deaths), radius=0))
 # Generate circular marker
 
 
-def plotDot(point):
+def plotDotCM(point):
     folium.CircleMarker(location=[point.latitude, point.longitude],
                         radius=5,
                         weight=2,
