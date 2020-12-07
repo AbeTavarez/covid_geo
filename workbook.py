@@ -92,3 +92,18 @@ lon = covid_final['longitude'].astype(float)
 
 # Heat map
 m1.add_child(HeatMap(zip(lat, lon, deaths), radius=0))
+
+# Generate circular marker
+
+
+def plotDot(point):
+    folium.CircleMarker(location=[point.latitude, point.longitude],
+                        radius=5,
+                        weight=2,
+                        popup=[point.Country, point.TotalDeaths],
+                        fill_color='#000000').add_to(m1)
+
+
+covid_final.apply(plotDot, axis=1)
+m1.fit_bounds(m1.get_bounds())
+# m1
