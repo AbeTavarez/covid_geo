@@ -59,12 +59,16 @@ covid2.update(covid2['TotalRecovered'].map('Total Recovered:{}'.format))
 
 coordinates = pd.read_csv(
     'https://raw.githubusercontent.com/VinitaSilaparasetty/covid-map/master/country-coordinates-world.csv')
+
+
 # coordinates
 covid_final = pd.merge(covid2, coordinates, on='Country')
 
+# Plotting
+
 
 def plotDot(point):
-    folium.CircleMarker(location=[point.latitude, point.longtude],
+    folium.CircleMarker(location=[point.latitude, point.longitude],
                         radius=5,
                         weight=2,
                         popup=[point.Country, point.TotalConfirmed,
