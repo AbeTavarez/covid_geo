@@ -39,3 +39,16 @@ map = folium.Map(tiles="Stamen Terrain", min_zoom=1.5)
 url = "https://raw.githubusercontent.com/python-visualization/folium/master/examples/data"
 
 country_shapes = f'{url}/world-countries.json'
+
+# Generate choropleh map layer
+folium.Choropleth(
+    geo_data=country_shapes,
+    min_zoom=2,
+    name='Covid-19',
+    data=covid2,
+    columns=['Country', 'TotalConfirmed'],
+    key_on='feature.properties.name',
+    fill_color='OrRd',
+    nan_fill_color='black',
+    legend_name='Total Confirmed Covid Cases',
+).add_to(map)
