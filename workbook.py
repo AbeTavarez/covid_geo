@@ -78,5 +78,5 @@ def plotDot(point):
 
 
 covid_final.apply(plotDot, axis=1)
-m.fit_bounds(m.get_bounds())
+map.fit_bounds(map.get_bounds())
 # m
