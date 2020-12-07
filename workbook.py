@@ -7,10 +7,13 @@ import folium
 from folium.plugis import HeatMap
 from pandas.io.json import json_normalize
 
-
+# Data Request
 conn = http.client.HTTPSConnection("api.covid19api.com")
 payload = ''
 headers = {}
 conn.request("GET", "/summary", payload, headers)
-re = conn.getresponce()
+res = conn.getresponse()
 data = res.read().decode("UTF-8")
+
+# Convert Data to JSON
+covid1 = json.loads(data)
