@@ -84,3 +84,11 @@ map.fit_bounds(map.get_bounds())
 # Generate base map
 m1 = folium.Map(tiles='StamenToner', min_zoom=2)
 # m1
+
+
+deaths = covid_final['TotalDeaths'].astype(float)
+lat = covid_final['latitude'].astype(float)
+lon = covid_final['longitude'].astype(float)
+
+# Heat map
+m1.add_child(HeatMap(zip(lat, lon, deaths), radius=0))
