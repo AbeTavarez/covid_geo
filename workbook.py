@@ -79,4 +79,8 @@ def plotDot(point):
 
 covid_final.apply(plotDot, axis=1)
 map.fit_bounds(map.get_bounds())
-# m
+# map
+
+# Generate base map
+m1 = folium.Map(tiles='StamenToner', min_zoom=2)
+# m1
