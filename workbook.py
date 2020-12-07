@@ -70,4 +70,4 @@ def plotDot(point):
                         popup=[point.Country, point.TotalConfirmed,
                                point.TotalRecovered],
                         fill_color='#000000'
-                        ).add_to(m)
+                        ).add_to(map)
