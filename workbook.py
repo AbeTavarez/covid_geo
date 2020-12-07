@@ -52,3 +52,22 @@ folium.Choropleth(
     nan_fill_color='black',
     legend_name='Total Confirmed Covid Cases',
 ).add_to(map)
+
+# Generate circular makers
+covid2.update(covid2['TotalConfirmed'].map('Total Confirmed:{}'.format))
+covid2.update(covid2['TotalRecovered'].map('Total Recovered:{}'.format))
+
+coordinates = pd.read_csv(
+    'https://raw.githubusercontent.com/VinitaSilaparasetty/covid-map/master/country-coordinates-world.csv')
+# coordinates
+covid_final = pd.merge(covid2, coordinates, on='Country')
+
+
+def plotDot(point):
+    folium.CircleMarker(location=[point.latitude, point.longtude],
+                        radius=5,
+                        weight=2,
+                        popup=[point.Country, point.TotalConfirmed,
+                               point.TotalRecovered],
+                        fill_color='#000000'
+                        ).add_to(m)
