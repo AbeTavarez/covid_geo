@@ -25,4 +25,4 @@ map = folium.Map(tiles="Stamen Terrain", min_zoom=1.5)
 ## Built With
 
 * [COVID19API](https://covid19api.com//) - API
-* [Folium](https://raw.githubusercontent.com/python-visualization/folium/master/examples/data) - Geo Da
+* [Folium](https://raw.githubusercontent.com/python-visualization/folium/master/examples/data) - Geo Data
