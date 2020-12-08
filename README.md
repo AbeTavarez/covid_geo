@@ -2,6 +2,8 @@
 
 Covid19 Geo Map 🗺 📍
 
+* [Live Page](https://abetavarez.github.io/covid_geo/) - Project's GitHub Pages
+
 ## Getting Started
 
 COVID19 Geo & Heat Map using covid19api.com
